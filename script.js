@@ -23,6 +23,26 @@
     // });
 
 
+    const firebaseConfig = {
+        apiKey: "AIzaSyBVgWZS9k6TNUasocTW-j7kyQDuJLjGBKc",
+        authDomain: "formulario-novo.firebaseapp.com"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    function cadastrar() {
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
+    
+        firebase.auth().createUserWithEmailAndPassword(email, senha)
+            .then((resultado) => {
+                alert('Usuário cadastrado');
+            })
+            .catch((erro) => {
+                alert('Erro no cadastro: ' + erro.message);
+            });
+    }
+
+
     document.getElementById('meuFormulario').addEventListener('submit', function(event) {
         event.preventDefault();
         
