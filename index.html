@@ -4,31 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
 </head>
 
 <body>
+    <div class="container">
+        <h1>Cadastro de Clientes</h1>
 
+        <!-- Barra de pesquisa -->
+        <div class="form-group search-box">
+            <input type="text" id="pesquisa" placeholder="Pesquisar cliente...">
+        </div>
 
-    <form action="/action_page.php" method="get" id="meuFormulario">
-        <label for="fname">Primeiro nome</label><br>
-        <input type="text" id="fname" name="fname" value="" autocomplete="off"><br>
-        <label for="lname">sobrenome</label><br>
-        <input type="text" id="lname" name="lname" value="" autocomplete="off"><br>
-        <input type="submit" value="submit" id="input-button">
+        <form id="formCadastro">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+            </div>
 
-    </form>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
 
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" placeholder="(99) 99999-9999" required>
+            </div>
 
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" required>
+            </div>
 
+            <button type="submit" id="btnSubmit">Cadastrar</button>
+        </form>
 
-
+        <div id="listaClientes">
+            <h2>Clientes Cadastrados</h2>
+            <ul id="clientes"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
-
-<script src="./script.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
 </html>
